@@ -32,14 +32,7 @@ const Header = () => {
               </a>
             ))}
 
-            {/* Icon Login */}
-            <a
-              href="../auth/login"
-              className="text-white hover:text-green-300 transition-colors flex items-center space-x-2"
-            >
-              <LogIn className="w-5 h-5" />
-              <span>Login</span>
-            </a>
+            
           </nav>
         </div>
       </header>

@@ -7,6 +7,7 @@ import { Quote } from "lucide-react";
 // 🟢 Ganti dengan App ID dan API Key kamu
 Backendless.initApp("2167F6E3-C338-42FE-9CFF-0DCB9BD261B6", "A1BDA551-D7BA-431D-AC4A-EAB56ABBE1F6");
 
+// 🟢 Interface buat data testimonial
 interface Testimonial {
   objectId: string;
   image: string;
@@ -24,7 +25,7 @@ const AllTestimonials = () => {
       try {
         const data = (await Backendless.Data.of("Testimonials").find()) as Testimonial[];
         setTestimonials(data);
-      } catch (err: any) {
+      } catch (err) {
         console.error("Gagal mengambil data:", err);
         setError("Gagal mengambil data dari server.");
       } finally {
@@ -57,17 +58,17 @@ const AllTestimonials = () => {
             >
               <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">
                 <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
+                  src={testimonial.image.startsWith("http") ? testimonial.image : "/placeholder.jpg"}
+                  alt={`Foto ${testimonial.name}`}
                   width={80}
                   height={80}
-                  className="w-20 h-20 rounded-full border-4 border-white shadow-md"
+                  className="w-20 h-20 rounded-full border-4 border-white shadow-md object-cover"
                 />
               </div>
               <div className="mt-10">
                 <Quote className="mx-auto mb-4 text-green-600 w-8 h-8" />
                 <p className="text-lg italic text-gray-700 mb-4">
-                  "{testimonial.feedback}"
+                  &quot;{testimonial.feedback}&quot;
                 </p>
                 <p className="text-green-700 font-semibold">
                   - {testimonial.name}
