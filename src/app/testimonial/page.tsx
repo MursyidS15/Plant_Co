@@ -31,7 +31,7 @@ const Testimonials = () => {
               <div className="mt-10">
                 <Quote className="mx-auto mb-4 text-green-600 w-8 h-8" />
                 <p className="text-lg italic text-gray-700 mb-4">
-                  "{testimonial.feedback}"
+                  &quot;{testimonial.feedback}&quot;
                 </p>
                 <p className="text-green-700 font-semibold">
                   - {testimonial.name}
@@ -41,7 +41,7 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* 🔗 Tombol View All Testimonials tanpa <a> */}
+        {/* 🔗 Tombol View All Testimonials dengan Link yang diperbaiki */}
         <div className="mt-12">
           <Link
             href="/alltesti"
