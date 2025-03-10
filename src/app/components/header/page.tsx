@@ -1,4 +1,6 @@
+"use client";
 import { LogIn } from "lucide-react";  // Import icon login dari lucide-react
+import Image from "next/image";
 
 const Header = () => {
   return (
@@ -8,9 +10,11 @@ const Header = () => {
         <div className="w-full max-w-screen-xl mx-auto flex items-center px-4 md:px-8">
           {/* Logo dan Nama Perusahaan */}
           <div className="flex items-center space-x-5 mr-auto">
-            <img
+            <Image
               src="/planttt.png"
               alt="Logo"
+              width={40}
+              height={40}
               className="w-10 h-10"
             />
             <span className="text-2xl font-bold text-white">Plant Co.</span>
@@ -28,14 +32,14 @@ const Header = () => {
               </a>
             ))}
 
-            {/* Icon Login
+            {/* Icon Login */}
             <a
               href="../auth/login"
               className="text-white hover:text-green-300 transition-colors flex items-center space-x-2"
             >
               <LogIn className="w-5 h-5" />
               <span>Login</span>
-            </a> */}
+            </a>
           </nav>
         </div>
       </header>
