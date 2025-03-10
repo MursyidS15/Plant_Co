@@ -1,0 +1,15 @@
+[
+    {
+      "id": 1,
+      "name": "Sarah W.",
+      "feedback": "Plant Co. transformed my home into a green paradise!!",
+      "image": "https://randomuser.me/api/portraits/women/48.jpg"
+    },
+    {
+      "id": 2,
+      "name": "John D.",
+      "feedback": "Excellent quality and customer service. Highly recommended!!",
+      "image": "https://randomuser.me/api/portraits/men/45.jpg" 
+    }
+  ]
+  

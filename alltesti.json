@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "image": "https://randomuser.me/api/portraits/men/1.jpg",
+      "feedback": "This plant shop is amazing! Great selection and healthy plants.",
+      "name": "Alice Johnson"
+    },
+    {
+      "id": 2,
+      "image": "https://randomuser.me/api/portraits/women/2.jpg",
+      "feedback": "My plants arrived in perfect condition. Highly recommend!",
+      "name": "Michael Smith"
+    },
+    {
+      "id": 3,
+      "image": "https://randomuser.me/api/portraits/men/3.jpg",
+      "feedback": "The tips for plant care were so helpful. Love this site!",
+      "name": "Emily Davis"
+    },
+    {
+      "id": 4,
+      "image": "https://randomuser.me/api/portraits/women/4.jpg",
+      "feedback": "Fantastic service and quick delivery. I'm a happy customer!",
+      "name": "Daniel Brown"
+    },
+    {
+      "id": 5,
+      "image": "https://randomuser.me/api/portraits/men/5.jpg",
+      "feedback": "I’ve never seen such beautiful plants online. Absolutely stunning!",
+      "name": "Olivia Wilson"
+    },
+    {
+      "id": 6,
+      "image": "https://randomuser.me/api/portraits/women/6.jpg",
+      "feedback": "Great prices for such high-quality plants. Will buy again!",
+      "name": "James Taylor"
+    },
+    {
+      "id": 7,
+      "image": "https://randomuser.me/api/portraits/men/7.jpg",
+      "feedback": "The customer service was incredibly friendly and helpful.",
+      "name": "Sophia Moore"
+    },
+    {
+      "id": 8,
+      "image": "https://randomuser.me/api/portraits/women/8.jpg",
+      "feedback": "Received so many compliments on my new plants. Thank you!",
+      "name": "William Lee"
+    },
+    {
+      "id": 9,
+      "image": "https://randomuser.me/api/portraits/men/9.jpg",
+      "feedback": "Website is easy to navigate and checkout was smooth.",
+      "name": "Isabella Harris"
+    },
+    {
+      "id": 10,
+      "image": "https://randomuser.me/api/portraits/women/10.jpg",
+      "feedback": "Amazing variety and quality. My go-to plant shop now!",
+      "name": "Alexander Martin"
+    }
+  ]
+  

@@ -1,0 +1,39 @@
+[
+    {
+      "id": "301",
+      "name": "Organic Plant Fertilizer",
+      "price": "$12.00",
+      "image": "https://www.aumanns.com.au/wp-content/uploads/2020/10/GB-Organic-Fertiliser-15k.jpg"
+    },
+    {
+      "id": "302",
+      "name": "Insecticidal Soap Spray",
+      "price": "$10.00",
+      "image": "https://th.bing.com/th/id/R.d85acf2081557feaddd6b2c350f2dd2b?rik=nll%2f6SpGWyN4sA&riu=http%3a%2f%2fgardenandhappy.com%2fwp-content%2fuploads%2f2019%2f01%2fspray_bottle_1548876015-800x533.jpg&ehk=8ZFrdu1JWzllIIolXJZtHw%2fNKOSMQryr2a7fnMf1ryY%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": "303",
+      "name": "Root Growth Hormone",
+      "price": "$15.00",
+      "image": "https://th.bing.com/th/id/OIP.k-M-GWTBIf25Aw1d-uSwKAHaKL?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "304",
+      "name": "Neem Oil Spray",
+      "price": "$14.00",
+      "image": "https://cdn.shopify.com/s/files/1/0541/3955/1941/products/neem-32rtu_1200x.jpg?v=1636038372"
+    },
+    {
+      "id": "305",
+      "name": "Leaf Shine Spray",
+      "price": "$8.00",
+      "image": "https://th.bing.com/th/id/OIP.EXXMvZjd7FNzbghupZz-ewAAAA?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "306",
+      "name": "Plant Moisture Meter",
+      "price": "$20.00",
+      "image": "https://www.thespruce.com/thmb/L7ktYAMP4OVoIvbKqgCsP4IhUx8=/1500x1500/filters:no_upscale():max_bytes(150000):strip_icc()/Dr.meter_Upgrade_Soil_Moisture_Meter_Sunlight_PH_Acidity_3-in-1_Soil_Tester_Kit-Dr.meter_1500x-4b31e701cc8b4675a8f07a5c09b39732.jpg"
+    }
+  ]
+  

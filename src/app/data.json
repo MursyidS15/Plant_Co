@@ -1,0 +1,33 @@
+[
+  {
+    "id": "101",
+    "name": "Monstera Deliciosa",
+    "price": "$45.00",
+    "image": "https://th.bing.com/th/id/OIP.a0iCJ4RE7dfmEQuHJWj1ogHaJ1?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": "102",
+    "name": "Fiddle Leaf Fig",
+    "price": "$60.00",
+    "image": "https://th.bing.com/th/id/OIP.fwlgYyZhOu9WwOlxEta9xAHaHa?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": "103",
+    "name": "Snake Plant",
+    "price": "$35.00",
+    "image": "https://res.cloudinary.com/bloomnation/c_pad,d_vendor:global:catalog:product:image.png,f_auto,fl_preserve_transparency,q_auto/v1591054288/vendor/7151/catalog/product/2/0/20200304122155_file_5e5ef4a3ccb60_5e5ef7b7cd5fa_5ed52d5bb4517_5ed52d5dcea54.jpg"
+  },
+  {
+    "id": "104",
+    "name": "Peace Lily",
+    "price": "$25.00",
+    "image": "https://th.bing.com/th/id/OIP.7opoeRKiShZ026e1FraDeQHaLH?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": "105",
+    "name": "ZZ Plant",
+    "price": "$40.00",
+    "image": "https://terragreenhouses.com/wp-content/uploads/2020/09/Zz_Plant_10inch-scaled.jpg"
+  }
+  
+]
