@@ -1,4 +1,4 @@
-import team from "@/app/data/page";
+import team from "@/app/data/page";  // Mengimpor data tim
 
 const AboutUs = () => {
   return (
@@ -51,7 +51,6 @@ const AboutUs = () => {
           ))}
         </div>
       </section>
-
 
       {/* Our Culture */}
       <section className="mb-12 text-center">
