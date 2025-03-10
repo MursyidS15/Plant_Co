@@ -1,6 +1,8 @@
+"use client";
 import DataTesti from "@/app/datatesti.json";
 import { Quote } from "lucide-react";
-import Link from "next/link";  // 🔗 Import Link dari Next.js
+import Link from "next/link";
+import Image from "next/image";  // 🟢 Import Image dari next/image
 
 const Testimonials = () => {
   const testimonials = DataTesti;
@@ -18,9 +20,11 @@ const Testimonials = () => {
               className="relative bg-white rounded-xl p-6 shadow-lg border border-gray-200 transition-transform hover:scale-105 hover:shadow-2xl"
             >
               <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">
-                <img
+                <Image
                   src={testimonial.image}
                   alt={testimonial.name}
+                  width={80}  // 🟢 Lebar gambar
+                  height={80} // 🟢 Tinggi gambar
                   className="w-20 h-20 rounded-full border-4 border-white shadow-md"
                 />
               </div>

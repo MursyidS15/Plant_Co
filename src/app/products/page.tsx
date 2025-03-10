@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";  // 🟢 Import Image dari next/image
 
 const ProductSection = () => {
   const products = [
@@ -38,9 +40,11 @@ const ProductSection = () => {
               key={product.id}
               className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
             >
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
+                width={500}  // 🟢 Lebar gambar (ubah sesuai kebutuhan)
+                height={300} // 🟢 Tinggi gambar (ubah sesuai kebutuhan)
                 className="w-full h-69 object-cover rounded-md mb-4"
               />
               <h3 className="text-2xl font-semibold mb-2 text-green-800">

@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import Backendless from "backendless";
 import { Quote } from "lucide-react";
 
@@ -21,8 +22,7 @@ const AllTestimonials = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        // 🟢 Fetch data dari tabel "Testimonials" di Backendless
-        const data = await Backendless.Data.of("Testimonials").find() as Testimonial[];
+        const data = (await Backendless.Data.of("Testimonials").find()) as Testimonial[];
         setTestimonials(data);
       } catch (err: any) {
         console.error("Gagal mengambil data:", err);
@@ -56,9 +56,11 @@ const AllTestimonials = () => {
               className="relative bg-white rounded-xl p-6 shadow-lg border border-gray-200 transition-transform hover:scale-105 hover:shadow-2xl"
             >
               <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">
-                <img
+                <Image
                   src={testimonial.image}
                   alt={testimonial.name}
+                  width={80}
+                  height={80}
                   className="w-20 h-20 rounded-full border-4 border-white shadow-md"
                 />
               </div>

@@ -1,3 +1,5 @@
+import React from "react";
+import Image from "next/image";  // 🟢 Import Image dari next/image
 import team from "@/app/data/page";
 
 const AboutUs = () => {
@@ -33,9 +35,12 @@ const AboutUs = () => {
               className="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-transparent hover:border-green-500 hover:shadow-2xl transition-all duration-300 p-6 relative group hover:-translate-y-3"
             >
               <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg transform transition-transform duration-300 group-hover:scale-105">
-                <img
+                {/* 🟢 Ganti <img> Jadi <Image /> */}
+                <Image
                   src={member.image}
                   alt={`${member.name} - ${member.title}`}
+                  width={96}       // 🟢 Tambah width
+                  height={96}      // 🟢 Tambah height
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -51,7 +56,6 @@ const AboutUs = () => {
           ))}
         </div>
       </section>
-
 
       {/* Our Culture */}
       <section className="mb-12 text-center">
