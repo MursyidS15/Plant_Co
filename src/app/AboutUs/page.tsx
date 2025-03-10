@@ -1,9 +1,9 @@
-import team from "@/app/team";  // Mengimpor data tim
+import team from "@/app/team";  
 
 const AboutUs = () => {
   return (
     <div className="bg-white text-gray-800 py-12 px-6 md:px-12">
-      {/* Company History */}
+      
       <div className="flex flex-col items-center">
         <section id="about-us" className="py-16 bg-white px-4 text-center">
           <div className="container max-w-screen-md mx-auto">
@@ -23,7 +23,7 @@ const AboutUs = () => {
         </section>
       </div>
 
-      {/* Our Team */}
+      
       <section className="mb-12 text-center">
         <h2 className="text-3xl font-bold mb-12 text-green-600">Our Team</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -52,7 +52,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Our Culture */}
+      
       <section className="mb-12 text-center">
         <h2 className="text-2xl font-semibold mb-4 text-green-600">
           Our Culture

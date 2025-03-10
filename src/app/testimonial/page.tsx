@@ -2,7 +2,7 @@
 import DataTesti from "@/app/datatesti.json";
 import { Quote } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";  // 🟢 Import Image dari next/image
+import Image from "next/image";  
 
 const Testimonials = () => {
   const testimonials = DataTesti;
@@ -23,8 +23,8 @@ const Testimonials = () => {
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
-                  width={80}  // 🟢 Lebar gambar
-                  height={80} // 🟢 Tinggi gambar
+                  width={80}  
+                  height={80} 
                   className="w-20 h-20 rounded-full border-4 border-white shadow-md"
                 />
               </div>
@@ -41,7 +41,7 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* 🔗 Tombol View All Testimonials dengan Link yang diperbaiki */}
+        
         <div className="mt-12">
           <Link
             href="/alltesti"

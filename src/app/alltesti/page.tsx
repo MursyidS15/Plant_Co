@@ -4,10 +4,10 @@ import Image from "next/image";
 import Backendless from "backendless";
 import { Quote } from "lucide-react";
 
-// 🟢 Ganti dengan App ID dan API Key kamu
+
 Backendless.initApp("2167F6E3-C338-42FE-9CFF-0DCB9BD261B6", "A1BDA551-D7BA-431D-AC4A-EAB56ABBE1F6");
 
-// 🟢 Interface buat data testimonial
+
 interface Testimonial {
   objectId: string;
   image: string;

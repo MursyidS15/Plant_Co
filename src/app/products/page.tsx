@@ -1,28 +1,28 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";  // 🟢 Import Image dari next/image
+import Image from "next/image";  
 
 const ProductSection = () => {
   const products = [
     {
       id: 1,
       name: "Indoor Plants",
-      description: `Bring nature indoors with our wide range of indoor plants.`,  // 🟢 Escape tanda kutip pake backtick
+      description: `Bring nature indoors with our wide range of indoor plants.`,  
       image:
         "https://cdn.plantssparkjoy.com/wp-content/uploads/2021/07/07114530/best-indoor-tree-plants-spark-joy-featured.jpeg",
     },
     {
       id: 2,
       name: "Gardening Tools",
-      description: `High-quality tools to help you maintain your garden effortlessly.`,  // 🟢 Escape tanda kutip pake backtick
+      description: `High-quality tools to help you maintain your garden effortlessly.`,  
       image:
         "https://th.bing.com/th/id/OIP.BuJbV1hjcra1p13BB__6DAHaGK?rs=1&pid=ImgDetMain",
     },
     {
       id: 3,
       name: "Plant Care Products",
-      description: `Organic fertilizers and care products for healthier plants.`,  // 🟢 Escape tanda kutip pake backtick
+      description: `Organic fertilizers and care products for healthier plants.`,  
       image:
         "https://pf.nice-cdn.com/upload/image/product/large/default/botanopia-plant-care-set-1679625-en.jpg",
     },

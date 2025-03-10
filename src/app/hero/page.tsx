@@ -3,9 +3,9 @@ const HeroSection = () => {
     <section className="relative h-screen w-full overflow-hidden">
       
 
-      {/* Overlay Gelap dan Konten Tengah */}
+      
       <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-        {/* Video Background */}
+       
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src="/plant.mp4"

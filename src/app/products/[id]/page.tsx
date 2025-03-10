@@ -22,7 +22,7 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(true);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
-  // 🛒 Fetch data dari Backendless
+  
   const fetchProducts = useCallback(async () => {
     try {
       let data: Product[] = [];
@@ -40,7 +40,7 @@ const ProductDetail = () => {
       console.error("Error fetching products:", error);
       setLoading(false);
     }
-  }, [id]); // 🟢 Tambahkan fetchProducts ke dependency useEffect
+  }, [id]);
 
   useEffect(() => {
     fetchProducts();
@@ -118,7 +118,7 @@ const ProductDetail = () => {
               key={product.objectId}
               className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow relative group"
             >
-              {product.image ? ( // 🟢 Validasi src sebelum render
+              {product.image ? ( 
                 <Image
                   src={product.image}
                   alt={product.name}

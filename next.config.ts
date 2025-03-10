@@ -21,34 +21,34 @@ const nextConfig: NextConfig = {
         hostname: "pf.nice-cdn.com",
       },
       {
-        protocol: "https",         // 🟢 Cloudinary
+        protocol: "https",         
         hostname: "res.cloudinary.com",  
-        pathname: "/**",           // 🟢 Izinkan semua path
+        pathname: "/**",           
       },
       {
-        protocol: "https",         // 🟢 terragreenhouses.com
+        protocol: "https",         
         hostname: "terragreenhouses.com",
-        pathname: "/**",           // 🟢 Izinkan semua path
+        pathname: "/**",           
       },
       {
-        protocol: "https",         // 🟢 cdn11.bigcommerce.com
+        protocol: "https",         
         hostname: "cdn11.bigcommerce.com",
-        pathname: "/**",           // 🟢 Izinkan semua path
+        pathname: "/**",           
       },
       {
-        protocol: "https",         // 🟢 www.theseedcollection.com.au
+        protocol: "https",         
         hostname: "www.theseedcollection.com.au",
-        pathname: "/**",           // 🟢 Izinkan semua path
+        pathname: "/**",           
       },
       {
-        protocol: "https",         // 🟢 www.aumanns.com.au
+        protocol: "https",         
         hostname: "www.aumanns.com.au",
-        pathname: "/**",           // 🟢 Izinkan semua path
+        pathname: "/**",           
       },
       {
-        protocol: "https",         // 🟢 cdn.shopify.com
+        protocol: "https",         
         hostname: "cdn.shopify.com",
-        pathname: "/**",           // 🟢 Izinkan semua path
+        pathname: "/**",           
       },
     ],
   },
