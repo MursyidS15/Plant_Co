@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams } from "next/navigation";
-import Image from "next/image";  // 🟢 Ganti <img> ke <Image />
+import Image from "next/image";
 import Backendless from "@/backendlessconfig";
 
 interface Product {
@@ -23,7 +23,7 @@ const ProductDetail = () => {
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
   // 🛒 Fetch data dari Backendless
-  const fetchProducts = async () => {
+  const fetchProducts = useCallback(async () => {
     try {
       let data: Product[] = [];
       if (id === "1") {
@@ -40,13 +40,12 @@ const ProductDetail = () => {
       console.error("Error fetching products:", error);
       setLoading(false);
     }
-  };
+  }, [id]); // 🟢 Tambahkan fetchProducts ke dependency useEffect
 
   useEffect(() => {
     fetchProducts();
-  }, [id]);
+  }, [fetchProducts]);
 
-  // 🔄 Ambil pencarian & urutan dari Local Storage saat pertama kali dimuat
   useEffect(() => {
     const savedSearch = localStorage.getItem(`searchQuery-${id}`);
     const savedSortOrder = localStorage.getItem(`sortOrder-${id}`);
@@ -59,7 +58,6 @@ const ProductDetail = () => {
     }
   }, [id]);
 
-  // 🔄 Simpan pencarian & urutan harga ke Local Storage
   useEffect(() => {
     if (searchTerm) {
       localStorage.setItem(`searchQuery-${id}`, searchTerm);
@@ -89,10 +87,13 @@ const ProductDetail = () => {
   return (
     <div className="container mx-auto py-16 px-4 text-center">
       <h1 className="text-4xl font-bold text-green-800 mb-8">
-        {id === "1" ? "Indoor Plants" : id === "2" ? "Gardening Tools" : "Plant Care Products"}
+        {id === "1"
+          ? "Indoor Plants"
+          : id === "2"
+          ? "Gardening Tools"
+          : "Plant Care Products"}
       </h1>
 
-      {/* 🔍 Input Search */}
       <input
         type="text"
         placeholder="Search products..."
@@ -101,7 +102,6 @@ const ProductDetail = () => {
         className="mb-4 p-2 border border-gray-300 rounded-lg w-80 focus:outline-none focus:border-green-500 transition-colors"
       />
 
-      {/* 🔄 Filter Harga */}
       <select
         value={sortOrder}
         onChange={(e) => setSortOrder(e.target.value as "asc" | "desc")}
@@ -118,16 +118,23 @@ const ProductDetail = () => {
               key={product.objectId}
               className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow relative group"
             >
-              <Image
-                src={product.image}
-                alt={product.name}
-                width={400}
-                height={240}
-                className="w-full h-60 object-cover rounded-md mb-4"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "/fallback-image.png";  // 🟢 Fallback gambar kalo error
-                }}
-              />
+              {product.image ? ( // 🟢 Validasi src sebelum render
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={400}
+                  height={240}
+                  className="w-full h-60 object-cover rounded-md mb-4"
+                />
+              ) : (
+                <Image
+                  src="/fallback-image.png"
+                  alt="Fallback Image"
+                  width={400}
+                  height={240}
+                  className="w-full h-60 object-cover rounded-md mb-4"
+                />
+              )}
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 {product.name}
               </h3>
@@ -141,7 +148,7 @@ const ProductDetail = () => {
           ))
         ) : (
           <p className="text-gray-500 col-span-4">
-            No products found for "{searchTerm}"
+            No products found for &quot;{searchTerm}&quot;
           </p>
         )}
       </div>
