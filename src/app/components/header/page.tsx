@@ -1,5 +1,4 @@
 "use client";
-// import { LogIn } from "lucide-react";  // Import icon login dari lucide-react
 import Image from "next/image";
 
 const Header = () => {
@@ -31,8 +30,6 @@ const Header = () => {
                 {item}
               </a>
             ))}
-
-            
           </nav>
         </div>
       </header>
