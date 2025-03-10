@@ -1,27 +1,26 @@
-// data/team.js
-const team = [
-    {
-      id: 1,
-      name: "Alice Johnson",
-      title: "CEO",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-      bio: "Alice has over 10 years of experience in managing green companies.",
-    },
-    {
-      id: 2,
-      name: "Bob Williams",
-      title: "CTO",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
-      bio: "Bob is a green technology expert with a passion for sustainable innovations.",
-    },
-    {
-      id: 3,
-      name: "Charlie Davis",
-      title: "COO",
-      image: "https://randomuser.me/api/portraits/men/46.jpg",
-      bio: "Charlie oversees operations with a strong focus on sustainability.",
-    },
-  ];
-  
-  export default team;
-  
+import React from "react";
+import team from "./page";
+
+const DataPage = () => {
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Our Team</h1>
+      <ul>
+        {team.map((member) => (
+          <li key={member.id} className="mb-4">
+            <img
+              src={member.image}
+              alt={member.name}
+              className="w-16 h-16 rounded-full mb-2"
+            />
+            <h2 className="font-semibold">{member.name}</h2>
+            <p>{member.title}</p>
+            <p className="text-gray-600">{member.bio}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default DataPage;
