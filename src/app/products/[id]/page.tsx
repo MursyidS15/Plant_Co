@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
+import Image from "next/image";  // 🟢 Ganti <img> ke <Image />
 import Backendless from "@/backendlessconfig";
 
 interface Product {
@@ -15,7 +16,6 @@ const ProductDetail = () => {
   const params = useParams();
   const id = params?.id;
 
-  // 🔄 State buat data produk, search, sort, dan loading
   const [products, setProducts] = useState<Product[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -23,26 +23,26 @@ const ProductDetail = () => {
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
   // 🛒 Fetch data dari Backendless
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        let data: Product[] = [];
-        if (id === "1") {
-          data = await Backendless.Data.of("IndoorPlants").find();
-        } else if (id === "2") {
-          data = await Backendless.Data.of("GardeningTools").find();
-        } else if (id === "3") {
-          data = await Backendless.Data.of("PlantCareProducts").find();
-        }
-
-        setProducts(data as Product[]);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-        setLoading(false);
+  const fetchProducts = async () => {
+    try {
+      let data: Product[] = [];
+      if (id === "1") {
+        data = await Backendless.Data.of("IndoorPlants").find();
+      } else if (id === "2") {
+        data = await Backendless.Data.of("GardeningTools").find();
+      } else if (id === "3") {
+        data = await Backendless.Data.of("PlantCareProducts").find();
       }
-    };
 
+      setProducts(data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
     fetchProducts();
   }, [id]);
 
@@ -73,7 +73,6 @@ const ProductDetail = () => {
       product.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // 🔄 Urutkan produk sesuai dengan `sortOrder`
     const sortedProducts = filtered.sort((a, b) => {
       const priceA = parseFloat(a.price);
       const priceB = parseFloat(b.price);
@@ -83,7 +82,6 @@ const ProductDetail = () => {
     setFilteredProducts(sortedProducts);
   }, [searchTerm, products, sortOrder, id]);
 
-  // 🛑 Jika masih loading
   if (loading) {
     return <div className="text-center py-20">Loading...</div>;
   }
@@ -120,10 +118,15 @@ const ProductDetail = () => {
               key={product.objectId}
               className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow relative group"
             >
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
+                width={400}
+                height={240}
                 className="w-full h-60 object-cover rounded-md mb-4"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "/fallback-image.png";  // 🟢 Fallback gambar kalo error
+                }}
               />
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 {product.name}
