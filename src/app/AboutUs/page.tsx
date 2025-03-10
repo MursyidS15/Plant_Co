@@ -1,4 +1,4 @@
-import team from "@/app/data/page";  // Mengimpor data tim
+import team from "@/app/team";  // Mengimpor data tim
 
 const AboutUs = () => {
   return (
