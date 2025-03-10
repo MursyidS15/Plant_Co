@@ -46,7 +46,7 @@ const nextConfig: NextConfig = {
         pathname: "/**",           // 🟢 Izinkan semua path
       },
       {
-        protocol: "https",         // 🟢 Tambahan buat cdn.shopify.com
+        protocol: "https",         // 🟢 cdn.shopify.com
         hostname: "cdn.shopify.com",
         pathname: "/**",           // 🟢 Izinkan semua path
       },
