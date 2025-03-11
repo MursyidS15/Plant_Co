@@ -1,10 +1,12 @@
 "use client";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Backendless from "backendless";
 import { Quote } from "lucide-react";
 
+
 Backendless.initApp("2167F6E3-C338-42FE-9CFF-0DCB9BD261B6", "A1BDA551-D7BA-431D-AC4A-EAB56ABBE1F6");
+
 
 interface Testimonial {
   objectId: string;
@@ -13,26 +15,26 @@ interface Testimonial {
   feedback: string;
 }
 
-const AllTestimonials = React.memo(() => {
+const AllTestimonials = () => {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchTestimonials = useCallback(async () => {
-    try {
-      const data = (await Backendless.Data.of("Testimonials").find()) as Testimonial[];
-      setTestimonials(data);
-    } catch (err) {
-      console.error("Gagal mengambil data:", err);
-      setError("Gagal mengambil data dari server.");
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
   useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const data = (await Backendless.Data.of("Testimonials").find()) as Testimonial[];
+        setTestimonials(data);
+      } catch (err) {
+        console.error("Gagal mengambil data:", err);
+        setError("Gagal mengambil data dari server.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchTestimonials();
-  }, [fetchTestimonials]);
+  }, []);
 
   if (loading) {
     return <p className="text-center text-green-700">Loading...</p>;
@@ -61,8 +63,6 @@ const AllTestimonials = React.memo(() => {
                   width={80}
                   height={80}
                   className="w-20 h-20 rounded-full border-4 border-white shadow-md object-cover"
-                  loading="lazy" 
-                  priority={false} 
                 />
               </div>
               <div className="mt-10">
@@ -80,6 +80,6 @@ const AllTestimonials = React.memo(() => {
       </div>
     </section>
   );
-});
+};
 
 export default AllTestimonials;
